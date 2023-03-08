@@ -1,38 +1,285 @@
-.App {
+.formWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* MainListEmployees ------------------------------- */
+
+.filterContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  background-color: rgb(176, 202, 245);
+}
+
+.searchByName {
+  margin: 0 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+}
+
+.filterByDepartment {
+  margin: 0 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+}
+
+.AddEmployeeButton {
+  margin: 0 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-color: #0a35c3;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.tableOfEmployees {
+  margin-top: 20px;
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 75%;
+}
+
+.tableOfEmployees caption {
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+.tableOfEmployees th, .tableOfEmployees td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.tableOfEmployees th {
+  background-color: #007bff;
+  color: #fff;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.tableOfEmployees td:first-child {
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.tableOfEmployees td:nth-child(2) {
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.tableOfEmployees td:nth-child(n+4) {
+  text-align: center;
+}
+
+.tableOfEmployees td:nth-child(n+4) button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.downloadButton {
+  margin: 10px auto;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.addBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* AddEmpl and EditEmpl components ---------------------- */
+
+.employeeFormContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 50%;
 }
 
-.App-link {
-  color: #61dafb;
+.employeeFormContainer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding: 20px 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.employeeFormContainer label {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
+
+.employeeFormContainer input[type='text'],
+.employeeFormContainer select,
+.employeeFormContainer textarea {
+  width: 80%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.employeeFormContainer textarea {
+  height: 150px;
+}
+
+div.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonsContainer button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.buttonsContainer button:last-child {
+  background-color: #dc3545;
+}
+
+.buttonsContainer button:hover {
+  background-color: #0069d9;
+}
+
+.buttonsContainer button:last-child:hover {
+  background-color: #c82333;
+}
+
+.employeeFormContainer div:nth-of-type(odd) {
+  background-color: #c3ddf7;
+}
+
+.employeeFormContainer div:nth-of-type(even) {
+  background-color: #e6f2ff
+}
+
+
+/* ViewEmpl component ------------------------------------ */
+
+.viewFormContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.viewFormContainer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding: 20px 20px;
+}
+
+.viewFormContainer div:nth-of-type(odd) {
+  background-color: #c3ddf7;
+}
+
+.viewFormContainer div:nth-of-type(even) {
+  background-color: #e6f2ff
+}
+
+.viewFormContainer label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.viewFormContainer div .inputImitation {
+  width: 80%;
+  min-height: 25px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ffff28;
+  background-color: #f6f4dd;
+}
+
+.inputImitation p {
+  margin: 0;
+  font-size: 18px;
+}
+
+div.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonContainer button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.buttonContainer button:hover {
+  background-color: #0069d9;
+}
+
+/* delete confirmation popup --------------------------- */
+
+.confirmationPopupWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmationPopup {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.confirmationPopup .message {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+
